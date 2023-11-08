@@ -1,0 +1,22 @@
+[package]
+name = "ananke"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+once_cell = "1.17"
+eyre = "0.6"
+futures = "0.3.26"
+secp256k1 = { version = "0.27.0", default-features = false, features = [
+    "global-context",
+    "rand-std",
+    "recovery",
+] }
+tokio = { version = "1.21", default-features = false }
+
+reth-primitives = { path = "reth/crates/primitives" }
+reth-network = { path = "reth/crates/net/network" }
+reth-discv4 = { path = "reth/crates/net/discv4" }
+reth-eth-wire = { path = "reth/crates/net/eth-wire" }
+reth-ecies = { path = "reth/crates/net/ecies" }
+
